@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-image-barnner: url("../images/desktop/image-header.jpg");
+    --font-body: 'Barlow', sans-serif;
+    --font-header:'fraunces', serif;
+    --size-title:50px;
+}
+
+.header {
+    padding: 30px;
+    background-image: var(--bg-image-barnner);
+    background-size: cover;
+    background-position: center;
+}
+
+.header_nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_nav a {
+    font-family: var(--font-body);
+    text-decoration: none;
+    color: white;
+}
+
+.header__link--button {
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.header__link--button a {
+    color: black;
+}
+
+.header__mobilenav{
+    display: none;/*se esconde y se verifica la medida wn la que debe aparecer: linea 52 */
+}
+
+h1{
+    font-family: var(--font-header);
+    color: white;
+    text-transform: uppercase; /*mayusculas*/
+    text-align: center;
+    font-size: var(--size-title);
+    margin: var(--size-title);
+    letter-spacing: 5px;
+}
+
+@media screen and (max-width: 565px) {
+    :root {
+        --bg-image-barnner: url("../images/mobile/image-header.jpg");
+        --size-title:30px;
+        /*--font-body: 'Barlow', sans-serif;
+        --font-header:'fraunces', serif;
+        --size-title:50px;*/
+    }
+    .header_nav ul{
+        display: none;
+    }
+
+    .header__mobilenav{
+        display: block; /*muestra elmenu mobile cuando se cumple elmax-width*/
+    }
+}
+
+.header section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--size-title);
+    height: 60vh;
+}
+
+.header section figure{
+    position: absolute;
+    top: 25%;
+}
